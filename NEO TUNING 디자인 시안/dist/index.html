@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1D1F20">
+<meta name="description" content="NEO TUNING. 컬러 랩핑, 외장 튜닝, 맞춤 커스텀. 내 차에 맞는 변화를 상담하는 자동차 아틀리에 콘셉트 포트폴리오.">
+<title>NEO TUNING — Automotive Atelier</title>
+<link rel="preload" href="assets/hero-porsche.jpg" as="image">
+<link rel="preload" href="assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Cormorant-3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Cormorant-1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NotoSerifKR-1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 이동</a>
+<header class="header"><div class="header-inner wide">
+<a class="logo" href="#home" aria-label="NEO TUNING 홈">NEO TUNING</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">메뉴 <span aria-hidden="true">+</span></button>
+<nav id="navigation" aria-label="주요 메뉴"><a href="#services">서비스</a><a href="#gallery">참고 갤러리</a><a class="header-quote" href="#quote">상담하기 <span aria-hidden="true">↗</span></a></nav></div>
+</header>
+<main id="main">
+<section class="hero" id="home" aria-labelledby="hero-title">
+<div class="hero-media">
+<img class="hero-image" src="assets/hero-porsche.jpg" alt="야간 도로를 주행하는 검은색 포르쉐 911. 차량 전체 모습과 헤드라이트." width="2000" height="3000" fetchpriority="high">
+</div>
+<div class="hero-content wide"><h1 id="hero-title" lang="en">Made to be<br><em>yours.</em></h1><a class="button primary hero-cta" href="#quote">내 차량 상담하기 <span aria-hidden="true">↗</span></a></div>
+</section>
+<section class="services-section wide" id="services" aria-labelledby="services-title">
+  <h2 id="services-title" class="sr-only">서비스 소개</h2>
+  <div class="service-grid">
+    <article class="service-story wrap-story">
+      <div class="service-heading"><h3>컬러 랩핑</h3><span lang="en">Colour</span></div>
+      <figure><div class="service-image"><img src="assets/wrapping.jpg" alt="그린 컬러 차체와 보닛, 전면 디테일을 보여주는 메르세데스 참고 사진" width="1000" height="1500" loading="lazy"></div></figure>
+      <div class="service-copy"><p>전체 컬러 변경부터 부분 포인트까지.<br>원하는 색과 마감을 함께 정합니다.</p><button class="inline-link" type="button" data-service="랩핑">컬러 랩핑 상담 <span aria-hidden="true">↗</span></button></div>
+    </article>
+    <article class="service-story wheel-story">
+      <div class="service-heading"><h3>외장 튜닝</h3><span lang="en">Contour</span></div>
+      <figure><div class="service-image"><img src="assets/wheels.jpg" alt="휠 전체와 노란색 브레이크 캘리퍼가 보이는 포르쉐 휠 참고 사진" width="1000" height="750" loading="lazy"></div></figure>
+      <div class="service-copy"><p>휠의 디자인과 비율을 중심으로.<br>차량 규격에 맞는 외관을 상담합니다.</p><button class="inline-link" type="button" data-service="휠">외장 튜닝 상담 <span aria-hidden="true">↗</span></button></div>
+    </article>
+    <article class="service-story exhaust-story">
+      <div class="service-heading"><h3>맞춤 커스텀</h3><span lang="en">Signature</span></div>
+      <figure><div class="service-image"><img src="assets/exhaust.jpg" alt="카본 질감과 배기 팁의 형태를 보여주는 근접 참고 사진" width="1000" height="668" loading="lazy"></div></figure>
+      <div class="service-copy"><p>배기와 디테일, 작업 범위까지.<br>원하는 방향을 구체적으로 정리합니다.</p><button class="inline-link" type="button" data-service="상담 후 결정">맞춤 커스텀 상담 <span aria-hidden="true">↗</span></button></div>
+    </article>
+  </div>
+</section>
+<section class="work-section wide" id="gallery" aria-labelledby="gallery-title">
+  <div class="work-layout">
+    <div class="work-intro">
+      <h2 id="gallery-title">참고 갤러리</h2>
+      <p class="work-description">포르쉐 컬러 랩핑.<br>실버에서 레드로.</p>
+      <button class="inline-link" type="button" data-service="랩핑">랩핑 상담하기 <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="work-reference">
+      <div class="comparison-pair" aria-label="촬영 각도가 다른 시공 전후 사진을 각각 표시">
+        <figure class="work-photo"><button class="photo-open" type="button" data-photo="before" aria-label="시공 전 은색 포르쉐 사진 크게 보기"><img src="assets/wrap-before.jpg" alt="시공 전 은색 포르쉐, 작업장에서 촬영한 전면 사선 구도" width="480" height="640" loading="lazy"></button><figcaption><strong>시공 전 · 실버</strong><span aria-hidden="true">확대 ↗</span></figcaption></figure>
+        <figure class="work-photo"><button class="photo-open" type="button" data-photo="after" aria-label="시공 후 빨간색 포르쉐 사진 크게 보기"><img src="assets/wrap-after.jpg" alt="시공 후 레드 컬러 포르쉐, 다른 각도에서 촬영한 전면 사선 구도" width="480" height="640" loading="lazy"></button><figcaption><strong>시공 후 · 레드</strong><span aria-hidden="true">확대 ↗</span></figcaption></figure>
+      </div>
+      <div class="work-source"><p><strong>외부 시공 참고</strong> · <a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">Monarch Media Designs ↗</a></p><p>촬영 각도가 다른 비교 자료입니다. NEO TUNING의 시공 실적이나 고객 후기가 아닙니다.</p></div>
+    </div>
+  </div>
+</section>
+<section class="quote-section wide" id="quote" aria-labelledby="quote-title">
+<div class="quote-heading"><h2 id="quote-title">원하는 변화를<br>알려주세요.</h2><p>차종과 관심 있는 작업을 선택해<br>상담할 내용을 미리 정리해보세요.</p><p class="local-note">체험용 미리보기입니다.<br>입력한 내용은 저장하거나 전송하지 않습니다.</p></div>
+<form id="quote-form" class="quote-form">
+<fieldset><legend>관심 있는 작업 <span>복수 선택 가능</span></legend><div class="service-options"><label><input type="checkbox" name="service" value="배기"><span>배기</span></label><label><input type="checkbox" name="service" value="휠"><span>휠</span></label><label><input type="checkbox" name="service" value="랩핑"><span>랩핑</span></label><label><input type="checkbox" name="service" value="상담 후 결정"><span>상담 후 결정</span></label></div></fieldset>
+<label class="field-label" for="car">차량 모델·연식 <span>필수</span></label><input id="car" name="car" type="text" placeholder="예: BMW 320i · 2022년식" maxlength="100" required autocomplete="off">
+<label class="field-label" for="message">원하는 작업 <span>선택</span></label><textarea id="message" name="message" rows="3" placeholder="원하는 컬러, 사운드 또는 궁금한 점을 적어주세요." maxlength="1000"></textarea>
+<p id="form-error" class="form-error" role="alert" hidden>관심 있는 작업을 하나 이상 선택해주세요.</p>
+<button class="button primary submit-button" type="submit">상담 내용 미리보기 <span aria-hidden="true">↗</span></button><p class="form-note">실제 접수는 연결되지 않은 체험용 양식입니다.</p>
+</form></section>
+</main>
+<footer class="footer wide"><div class="footer-main"><a class="logo" href="#home">NEO TUNING</a><div class="footer-links"><a href="#services">서비스</a><a href="#gallery">참고 갤러리</a><a href="#quote">상담하기 ↗</a></div></div><div class="footer-meta"><span>2026 NEO TUNING · 콘셉트 포트폴리오</span><button id="credits-open" type="button">사진 출처</button><a href="#home">맨 위로 ↑</a></div></footer>
+<dialog id="photo-dialog" class="photo-dialog" aria-labelledby="photo-title"><div class="photo-dialog-head"><h2 id="photo-title">포르쉐 컬러 랩핑 전후</h2><button type="button" class="close-button" data-close aria-label="사진 닫기">닫기 ×</button></div><div class="photo-switcher" role="group" aria-label="크게 볼 전후 사진 선택"><button type="button" data-photo-view="before" aria-pressed="true">시공 전 · 실버</button><button type="button" data-photo-view="after" aria-pressed="false">시공 후 · 레드</button></div><div class="photo-viewer"><img data-large-photo="before" src="assets/wrap-before.jpg" alt="확대: 시공 전 은색 포르쉐" width="480" height="640" loading="lazy"><img data-large-photo="after" src="assets/wrap-after.jpg" alt="확대: 시공 후 빨간색 포르쉐" width="480" height="640" loading="lazy" hidden></div><p class="photo-credit">외부 시공 참고 · <a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">Monarch Media Designs ↗</a></p></dialog>
+<dialog id="quote-dialog" class="modal" aria-labelledby="dialog-title"><button class="close-button" type="button" data-close aria-label="닫기">닫기 ×</button><h2 id="dialog-title">상담 내용 확인</h2><dl><dt>차량</dt><dd id="summary-car"></dd><dt>관심 작업</dt><dd id="summary-services"></dd><dt>원하는 스타일</dt><dd id="summary-message"></dd></dl><p class="dialog-note">미리보기입니다. 실제 상담은 접수되지 않으며 입력 내용은 전송되지 않습니다.</p><button class="button primary" type="button" data-close>확인했어요 ✓</button></dialog>
+<dialog id="credits-dialog" class="modal" aria-labelledby="credits-title"><button class="close-button" type="button" data-close aria-label="닫기">닫기 ×</button><h2 id="credits-title">사진 출처</h2><p>아래 사진은 콘셉트와 서비스를 설명하기 위한 참고 자료입니다.</p><ul>
+<li><a href="https://unsplash.com/photos/a-black-sports-car-driving-down-a-street-at-night-nSk0ChnKcik" target="_blank" rel="noopener noreferrer">주행 사진 · Franco Debartolo / Unsplash ↗</a></li>
+<li><a href="https://unsplash.com/photos/a-close-up-of-a-cars-exhaust-pipe-dp8KvwAFJpM" target="_blank" rel="noopener noreferrer">배기 · Erik Mclean / Unsplash ↗</a></li>
+<li><a href="https://unsplash.com/photos/a-close-up-of-a-porsche-car-wheel-Q3qO1YR5_ts" target="_blank" rel="noopener noreferrer">휠 · Haberdoedas / Unsplash ↗</a></li>
+<li><a href="https://unsplash.com/photos/a-green-car-parked-on-the-side-of-the-road-6g_ebIKSbzU" target="_blank" rel="noopener noreferrer">랩핑 · Vignesh Rajendran / Unsplash ↗</a></li>
+<li><a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">전후 사진 · Monarch Media Designs ↗</a></li>
+</ul><p class="dialog-note">외부 시공 사진을 NEO TUNING의 실적이나 고객 후기로 표시하지 않습니다.</p></dialog>
+</body>
+</html>

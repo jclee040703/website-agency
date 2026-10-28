@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const dist=path.join(root,'dist');
+let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
+const css=fs.readFileSync(path.join(dist,'style.css'),'utf8').replace(/url\((['"]?)(assets\/fonts\/[^)'"]+)\1\)/g,(_,quote,name)=>"url('data:font/woff2;base64,"+fs.readFileSync(path.join(dist,name)).toString('base64')+"')");
+const js=fs.readFileSync(path.join(dist,'app.js'),'utf8');
+const licenses=['OFL.txt','Cormorant-OFL.txt','NotoSerifKR-OFL.txt'].map(name=>name+'\n'+fs.readFileSync(path.join(dist,'assets/fonts',name),'utf8')).join('\n\n');
+html=html.replace(/\s*<link rel="preload"[^>]+>/g,'');
+html=html.replace('<link rel="stylesheet" href="style.css">',()=>'<style>'+css+'</style>');
+html=html.replace('<script src="app.js" defer></script>','');
+html=html.replace('</body>',()=>'<script>'+js+'</script><!-- Font licenses\n'+licenses.replace(/-->/g,'-- >')+'\n--></body>');
+html=html.replace(/src="assets\/([^"]+)"/g,(_,name)=>'src="data:image/jpeg;base64,'+fs.readFileSync(path.join(dist,'assets',name)).toString('base64')+'"');
+const filename='NEO TUNING — 프리미엄 아틀리에.html';
+fs.writeFileSync(path.join(root,filename),html);
+console.log('Saved '+filename+' with embedded images, fonts and licenses. Previous four concepts are preserved.');

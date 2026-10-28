@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Cormorant-1.woff2) format('woff2');
+  unicode-range: U+20, U+26, U+2c-2e, U+30-39, U+41-5a, U+61-7a;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Cormorant-2.woff2) format('woff2');
+  unicode-range: U+20, U+26, U+2c-2e, U+30-39, U+41-5a, U+61-7a;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/Cormorant-3.woff2) format('woff2');
+  unicode-range: U+20, U+26, U+2c-2e, U+30-39, U+41-5a, U+61-7a;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/Cormorant-4.woff2) format('woff2');
+  unicode-range: U+20, U+26, U+2c-2e, U+30-39, U+41-5a, U+61-7a;
+}
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/NotoSerifKR-1.woff2) format('woff2');
+  unicode-range: U+20, U+ac24, U+ace0, U+afb8, U+b0b4, U+b294, U+b2c8, U+b2dd, U+b2e4, U+b2ec, U+b2f4, U+b77c, U+b7a9, U+b7ec, U+b824, U+b974, U+b97c, U+b9ac, U+b9de, U+ba74, U+bc14, U+bcc0, U+c0ac, U+c0c1, U+c0c9, U+c138, U+c250, U+c2a4, U+c54c, U+c678, U+c694, U+c6a9, U+c6d0, U+c744, U+c774, U+c778, U+c7a5, U+c804, U+c8fc, U+c9c4, U+c9d1, U+cc38, U+cc98, U+cd9c, U+cda4, U+cee4, U+ceec, U+d140, U+d29c, U+d3ec, U+d551, U+d558, U+d654-d655, U+d6c4;
+}

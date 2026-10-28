@@ -1,0 +1,323 @@
+@font-face{font-family:Pretendard;src:url('assets/fonts/PretendardVariable.woff2') format('woff2');font-weight:45 920;font-style:normal;font-display:swap}
+:root{font-family:Pretendard,'Malgun Gothic',sans-serif;scroll-behavior:smooth;scroll-padding-top:110px;color-scheme:light}
+*{box-sizing:border-box}
+body{--ground:#f3f4f4;--ink:#202428;--secondary:#5f666c;--rule:#d8dcdf;--accent:#8e2c27;--surface:#fff;--gutter:clamp(24px,4.2vw,64px);--content:1320px;margin:0;background:var(--ground);color:var(--ink);font-size:16px;line-height:1.75}
+[hidden]{display:none!important}
+h1,h2,h3,p,figure,dl,dd{margin:0}
+h1,h2,h3{font-weight:600;line-height:1.3;letter-spacing:-.035em;word-break:keep-all;text-wrap:balance}
+h2{font-size:32px}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button{cursor:pointer;border:0;color:inherit;background:transparent}
+button,input,textarea,.button{border-radius:2px}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+.wide{width:calc(100% - var(--gutter)*2);max-width:var(--content);margin-inline:auto}
+.skip-link{position:fixed;top:10px;left:10px;z-index:100;transform:translateY(-200%);padding:10px 18px;background:var(--ink);color:var(--ground)}
+.skip-link:focus{transform:none}
+.button{display:inline-flex;align-items:center;justify-content:space-between;gap:26px;min-height:50px;padding:13px 22px;font-size:15px;font-weight:600;line-height:1.6}
+.primary{background:var(--accent);color:#fff}
+.primary:hover{filter:brightness(.9)}
+.inline-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:44px;padding:9px 0;border-bottom:1px solid var(--rule);border-radius:0;background:transparent;font-size:15px;line-height:1.6}
+.inline-link:hover{border-color:var(--ink)}
+/* The comparison controls belong to this private design review, not the customer site. */
+.review-bar{position:sticky;top:0;z-index:30;color:#202428;background:#fff;border-bottom:1px solid #d8dcdf;padding:8px 24px 7px}
+.review-inner{max-width:1320px;margin:auto;display:flex;align-items:center;justify-content:center;gap:26px}
+.review-label{font-size:13px;font-weight:600}
+.concept-options{display:flex;gap:6px}
+.concept-options button{min-height:36px;padding:5px 14px;font-size:13px;border:1px solid transparent;white-space:nowrap}
+.concept-options button[aria-pressed=true]{background:#202428;color:#fff}
+.concept-options button:hover{border-color:#202428}
+.review-hide{font-size:12px;padding:8px}
+.review-bar>p{font-size:12px;color:#5f666c;line-height:1.5;text-align:center;margin-top:3px}
+.review-show{position:fixed;right:20px;bottom:20px;z-index:25;background:#fff;color:#202428;border:1px solid #d8dcdf;padding:10px 16px;font-size:13px}
+/* Shared content and interactions. */
+.header{position:relative;z-index:20;background:var(--ground)}
+.header-inner{height:92px;display:flex;align-items:center;gap:36px}
+.logo{font-weight:800;font-size:27px;letter-spacing:-.055em;white-space:nowrap;line-height:1.15}
+.header nav{margin-left:auto;display:flex;align-items:center;gap:32px;font-size:14px}
+.header nav a{padding-block:12px}
+.header nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.menu-toggle{display:none}
+.header-quote{min-height:44px;padding:10px 19px;font-size:14px}
+.hero-media{position:relative;overflow:hidden;width:100%;height:clamp(400px,42vw,700px)}
+.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 67%}
+.brand-intro{display:flex;align-items:center;justify-content:space-between;gap:40px;padding-block:38px 40px}
+.brand-intro h1{font-size:48px;font-weight:600}
+.intro-break{display:none}
+.intro-support{display:flex;align-items:center;gap:38px}
+.intro-support p{font-size:17px;color:var(--secondary)}
+.services-section{padding-top:64px}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:32px}
+.section-heading p{font-size:16px;line-height:1.75;color:var(--secondary)}
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.service-story{min-width:0}
+.service-image{aspect-ratio:1;overflow:hidden}
+.service-image img{width:100%;height:100%;object-fit:cover}
+.wrap-story img{object-position:50% 54%}
+.exhaust-story img{object-position:48% 50%}
+.wheel-story img{object-position:57% 50%}
+.service-copy{margin-top:22px}
+.service-copy h3{font-size:24px}
+.service-copy p{color:var(--secondary);font-size:16px;line-height:1.8;margin-block:12px 17px;word-break:keep-all;max-width:39ch}
+.work-section{border-top:1px solid var(--rule);margin-top:100px;padding-top:56px}
+.work-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,620px);gap:80px;align-items:start}
+.work-description{font-size:18px;line-height:1.8;color:var(--secondary);margin-top:20px}
+.work-intro>.inline-link{margin-top:28px}
+.work-reference{min-width:0}
+.comparison-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.photo-open{display:block;width:100%;padding:0;cursor:zoom-in}
+.photo-open img{width:100%;height:auto;max-height:400px;aspect-ratio:3/4;object-fit:contain}
+.work-photo figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-top:10px;font-size:14px}
+.work-photo figcaption strong{font-weight:500}
+.work-photo figcaption span{font-size:13px;color:var(--secondary);white-space:nowrap}
+.work-source{font-size:13px;line-height:1.8;color:var(--secondary);margin-top:20px;word-break:keep-all}
+.work-source p+p{margin-top:5px}
+.work-source strong{color:var(--ink);font-weight:600}
+.work-source a,.photo-credit a{text-decoration:underline;text-underline-offset:3px}
+.quote-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:80px;border-top:1px solid var(--rule);margin-top:88px;padding-block:56px 88px}
+.quote-heading h2{font-size:36px}
+.quote-heading>p{color:var(--secondary);font-size:16px;margin-top:20px;word-break:keep-all}
+.quote-heading .local-note{font-size:14px;margin-top:28px}
+.quote-form{width:100%;min-width:0}
+fieldset{margin:0 0 24px;border:0;padding:0;min-width:0}
+legend,.field-label{font-size:16px;line-height:1.6}
+legend{margin-bottom:12px}
+legend span,.field-label span{margin-left:8px;color:var(--secondary);font-size:13px}
+.service-options{display:flex;flex-wrap:wrap;gap:8px}
+.service-options label{cursor:pointer;position:relative}
+.service-options input{position:absolute;opacity:0;width:1px;height:1px}
+.service-options span{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 18px;border:1px solid var(--rule);border-radius:2px;font-size:14px;line-height:1.7}
+.service-options input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff}
+.service-options input:focus-visible+span{outline:2px solid var(--ink);outline-offset:4px}
+.field-label{display:block;margin:24px 0 10px}
+.quote-form input[type=text],.quote-form textarea{display:block;width:100%;color:var(--ink);background:var(--surface);border:1px solid var(--rule);padding:15px 16px;font-size:16px;line-height:1.75;min-height:58px}
+.quote-form input::placeholder,.quote-form textarea::placeholder{color:var(--secondary);opacity:1}
+.quote-form textarea{resize:vertical;min-height:130px}
+.submit-button{width:100%;margin-top:24px}
+.form-note{font-size:13px;color:var(--secondary);margin-top:12px}
+.form-error{font-size:14px;font-weight:600;border-left:2px solid var(--ink);padding-left:12px;margin-top:14px}
+.footer{border-top:1px solid var(--rule);padding-block:34px 28px}
+.footer-main,.footer-meta{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.footer-links{display:flex;gap:30px;font-size:14px}
+.footer-meta{justify-content:flex-start;margin-top:26px;color:var(--secondary);font-size:13px}
+.footer-meta button{padding:10px 0;min-height:44px;font-size:13px}
+.footer-meta>a{margin-left:auto}
+/* Modal surfaces inherit every concept's ink and accent, including form feedback. */
+dialog{margin:auto;color:var(--ink);background:var(--ground);border:1px solid var(--rule);border-radius:2px;max-height:90dvh;overflow:auto}
+dialog::backdrop{background:#202428c9}
+body:has(dialog[open]){overflow:hidden}
+.close-button{display:block;margin-left:auto;min-height:44px;padding:8px 10px;font-size:14px}
+.modal{width:min(580px,calc(100% - 32px));padding:24px 32px 32px}
+.modal h2{font-size:28px;margin:8px 0 20px}
+.modal p,.modal li{font-size:15px;color:var(--secondary)}
+.modal li{margin-bottom:14px}
+.modal li a{text-decoration:underline;text-underline-offset:4px}
+.modal ul{padding-left:22px}
+.modal dt{font-size:14px;color:var(--secondary);margin-top:18px}
+.modal dd{font-size:17px;overflow-wrap:anywhere;white-space:pre-wrap}
+.dialog-note{margin:24px 0;border-top:1px solid var(--rule);padding-top:20px}
+.photo-dialog{width:min(760px,calc(100% - 32px));padding:16px 24px}
+.photo-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.photo-dialog-head h2{font-size:18px}
+.photo-switcher{display:flex;justify-content:center;gap:10px;margin-block:14px}
+.photo-switcher button{min-height:46px;border:1px solid var(--rule);padding:10px 16px;font-size:14px}
+.photo-switcher button[aria-pressed=true]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.photo-viewer img{margin:auto;width:auto;height:auto;max-height:62dvh;object-fit:contain}
+.photo-credit{font-size:13px;text-align:center;color:var(--secondary);margin-top:14px}
+/* B — an editorial atelier: a quiet serif wordmark, portrait-led spread, service stories. */
+body[data-concept=atelier]{--ground:#f1eee8;--ink:#2b2926;--secondary:#69645e;--rule:#d8d1c7;--accent:#725a38;--surface:#faf8f4;--content:1240px}
+[data-concept=atelier] .logo{font-family:Georgia,'Times New Roman',serif;font-size:29px;font-weight:400;letter-spacing:.015em}
+[data-concept=atelier] .header-inner{height:104px}
+[data-concept=atelier] .hero{width:calc(100% - var(--gutter)*2);max-width:1240px;margin:12px auto 0;display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center}
+[data-concept=atelier] .hero-media{grid-column:2;grid-row:1;height:620px}
+[data-concept=atelier] .hero-image{object-position:50% 64%}
+[data-concept=atelier] .brand-intro{grid-column:1;grid-row:1;width:100%;display:block;padding:0;margin:0}
+[data-concept=atelier] .brand-intro h1{font-size:46px;font-weight:450;line-height:1.45;letter-spacing:-.05em}
+[data-concept=atelier] .intro-break{display:block}
+[data-concept=atelier] .intro-support{display:block;margin-top:30px}
+[data-concept=atelier] .intro-support .inline-link{margin-top:26px}
+[data-concept=atelier] h2,[data-concept=atelier] h3{font-weight:450}
+[data-concept=atelier] .services-section{padding-top:100px}
+[data-concept=atelier] .section-heading{margin-bottom:40px}
+[data-concept=atelier] .service-grid{grid-template-columns:1fr;gap:48px}
+[data-concept=atelier] .service-story{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:80px;align-items:center}
+[data-concept=atelier] .service-image{aspect-ratio:3/2;max-height:410px}
+[data-concept=atelier] .wheel-story .service-image{aspect-ratio:4/3}
+[data-concept=atelier] .service-copy{margin-top:0;max-width:350px}
+[data-concept=atelier] .service-copy h3{font-size:30px}
+[data-concept=atelier] .service-copy p{margin-block:20px 24px}
+[data-concept=atelier] .exhaust-story figure{grid-column:2;grid-row:1}
+[data-concept=atelier] .exhaust-story .service-copy{grid-column:1;grid-row:1}
+[data-concept=atelier] .work-layout{grid-template-columns:minmax(0,1fr) minmax(0,560px)}
+/* C — precision: cool mineral tones, a compact masthead and horizontal photo grid. */
+body[data-concept=precision]{--ground:#edf1f3;--ink:#1f303b;--secondary:#536570;--rule:#cbd5dc;--accent:#35596d;--surface:#f8fafb;--content:1320px}
+[data-concept=precision] .logo{font-weight:650;font-size:24px;letter-spacing:.13em}
+[data-concept=precision] .header-inner{height:84px;border-bottom:1px solid var(--rule)}
+[data-concept=precision] .hero{width:calc(100% - var(--gutter)*2);max-width:1320px;margin:24px auto 0;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:30px}
+[data-concept=precision] .hero-media{height:560px}
+[data-concept=precision] .hero-image{object-position:50% 67%}
+[data-concept=precision] .brand-intro{width:100%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:30px;padding:34px 0 28px 24px;border-left:1px solid var(--rule)}
+[data-concept=precision] .brand-intro h1{font-size:44px;font-weight:650;line-height:1.4;max-width:7em}
+[data-concept=precision] .intro-break{display:block}
+[data-concept=precision] .intro-support{display:block}
+[data-concept=precision] .intro-support p{font-size:16px}
+[data-concept=precision] .intro-support .inline-link{margin-top:20px}
+[data-concept=precision] .services-section{padding-top:72px}
+[data-concept=precision] .service-grid{gap:20px}
+[data-concept=precision] .service-image{aspect-ratio:4/3}
+[data-concept=precision] .service-copy{padding-top:18px;border-top:1px solid var(--rule);margin-top:20px}
+[data-concept=precision] .work-layout{grid-template-columns:1fr;gap:30px}
+[data-concept=precision] .work-intro{display:flex;gap:40px;align-items:start}
+[data-concept=precision] .work-description{margin-top:0}
+[data-concept=precision] .work-intro .inline-link{margin-top:0;margin-left:auto}
+[data-concept=precision] .work-reference{max-width:620px;margin-left:auto;width:100%}
+[data-concept=precision] .quote-section{gap:60px}
+[data-concept=precision] .button,[data-concept=precision] input,[data-concept=precision] textarea,[data-concept=precision] .service-options span{border-radius:0}
+/* D — a photographic gallery: generous margins, centered wordmark and staggered images. */
+body[data-concept=gallery]{--ground:#f7f7f5;--ink:#292f2c;--secondary:#636d66;--rule:#d6dcd6;--accent:#38574a;--surface:#fff;--content:1240px}
+[data-concept=gallery] .header-inner{height:106px;display:grid;grid-template-columns:1fr auto 1fr}
+[data-concept=gallery] .header .logo{grid-column:2;grid-row:1;font-weight:500;letter-spacing:.16em;font-size:26px}
+[data-concept=gallery] .header nav{grid-column:1;grid-row:1;margin-left:0;gap:26px}
+[data-concept=gallery] .header-quote{grid-column:3;grid-row:1;justify-self:end}
+[data-concept=gallery] .hero{width:calc(100% - var(--gutter)*2);max-width:1240px;margin:8px auto 0}
+[data-concept=gallery] .hero-media{height:540px}
+[data-concept=gallery] .hero-image{object-position:50% 67%}
+[data-concept=gallery] .brand-intro{width:100%;display:block;text-align:center;padding-block:36px 8px}
+[data-concept=gallery] .brand-intro h1{font-weight:400;font-size:44px;letter-spacing:-.04em}
+[data-concept=gallery] .intro-support{justify-content:center;margin-top:16px;gap:28px}
+[data-concept=gallery] .services-section{padding-top:90px}
+[data-concept=gallery] .section-heading{display:block;max-width:580px}
+[data-concept=gallery] .section-heading p{margin-top:16px}
+[data-concept=gallery] h2,[data-concept=gallery] h3{font-weight:500}
+[data-concept=gallery] .service-grid{gap:40px}
+[data-concept=gallery] .service-image{aspect-ratio:1}
+[data-concept=gallery] .exhaust-story{padding-top:72px}
+[data-concept=gallery] .wheel-story{padding-top:144px}
+[data-concept=gallery] .work-section{margin-top:88px}
+[data-concept=gallery] .quote-section{max-width:1000px;grid-template-columns:1fr;gap:32px}
+[data-concept=gallery] .quote-heading{display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+[data-concept=gallery] .quote-heading>p{margin-top:0}
+[data-concept=gallery] .quote-heading .local-note{grid-column:2;margin-top:12px}
+[data-concept=gallery] .quote-heading h2{grid-row:span 2}
+[data-concept=gallery] .quote-form{max-width:620px;margin-left:auto}
+@media(max-width:1100px){
+.header-inner{gap:24px}.header nav{gap:22px}.brand-intro h1{font-size:42px}.intro-support{gap:24px}.work-layout{gap:40px;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}.quote-section{gap:44px}.service-copy p br{display:none}
+[data-concept=atelier] .hero{gap:36px;grid-template-columns:1fr 1.5fr}[data-concept=atelier] .hero-media{height:560px}[data-concept=atelier] .brand-intro h1{font-size:38px}[data-concept=atelier] .service-story{gap:48px}
+[data-concept=precision] .brand-intro h1{font-size:34px}[data-concept=precision] .hero-media{height:500px}
+[data-concept=gallery] .header .logo{font-size:23px}[data-concept=gallery] .header nav{gap:18px}[data-concept=gallery] .service-grid{gap:24px}
+}
+@media(max-width:760px){
+:root{scroll-padding-top:125px}
+body{--gutter:22px}
+.review-bar{padding:6px 12px}
+.review-inner{gap:8px;justify-content:space-between;flex-wrap:wrap}
+.review-label{font-size:12px}
+.concept-options{gap:3px;order:3;width:100%}
+.concept-options button{flex:1;padding:5px 3px;font-size:12px;min-height:34px}
+.review-hide{font-size:12px;padding:2px 4px;min-height:30px}
+.review-bar>p{font-size:12px;text-align:left;margin-top:5px;line-height:1.4;min-height:17px}
+.header-inner{height:78px;gap:14px}
+.logo{font-size:21px}
+.header-quote{margin-left:auto;font-size:12px;padding:9px 12px;min-height:42px;gap:12px}
+.menu-toggle{display:flex;align-items:center;gap:8px;order:4;padding:8px 0;min-height:44px;font-size:13px}
+.menu-toggle span{font-size:22px}
+.header nav{display:none;position:absolute;left:0;right:0;top:78px;padding:18px var(--gutter);background:var(--ground);border-bottom:1px solid var(--rule);font-size:16px}
+.header nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.hero-media{height:auto;aspect-ratio:4/3}
+.hero-image{object-position:50% 70%}
+.brand-intro{display:block;padding-block:28px 18px}
+.brand-intro h1{font-size:32px;line-height:1.35}
+.intro-support{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
+.intro-support p{font-size:15px}
+.intro-support .inline-link{font-size:13px;gap:14px}
+h2{font-size:28px}
+.services-section{padding-top:48px}
+.section-heading{display:block;margin-bottom:24px}
+.section-heading p{font-size:16px;margin-top:14px}
+.service-grid{grid-template-columns:1fr;gap:44px}
+.service-image{aspect-ratio:1}
+.service-copy{margin-top:20px}
+.service-copy h3{font-size:24px}
+.service-copy p{margin-block:12px 14px;font-size:16px}
+.work-section{margin-top:64px;padding-top:36px}
+.work-layout{grid-template-columns:1fr;gap:26px}
+.work-description{font-size:16px;margin-top:14px}
+.work-intro>.inline-link{margin-top:15px}
+.comparison-pair{gap:12px}
+.work-photo figcaption{display:block;font-size:13px}
+.work-photo figcaption span{display:block;margin-top:2px}
+.work-source{font-size:13px;margin-top:18px}
+.quote-section{grid-template-columns:1fr;gap:28px;margin-top:56px;padding-block:36px 56px}
+.quote-heading h2{font-size:30px}
+.quote-heading>p{margin-top:16px}
+.quote-heading .local-note{margin-top:20px;font-size:14px}
+.service-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.service-options span{width:100%;padding-inline:10px;font-size:15px}
+.footer-main{flex-wrap:wrap;gap:22px}
+.footer-links{gap:22px;font-size:14px}
+.footer-meta{flex-wrap:wrap;gap:10px 22px}
+.footer-meta>span{width:100%}
+.modal{padding:16px 22px 26px}
+.photo-dialog{padding:12px}
+.photo-dialog-head{gap:10px}
+.photo-dialog-head h2{font-size:16px}
+.photo-switcher{gap:8px}
+.photo-switcher button{padding-inline:12px;font-size:13px}
+[data-concept=atelier] .header-inner{height:78px}
+[data-concept=atelier] .logo{font-size:21px;letter-spacing:-.025em}
+[data-concept=atelier] .hero{display:flex;flex-direction:column;gap:0;margin-top:0}
+[data-concept=atelier] .hero-media{height:auto;aspect-ratio:4/5}
+[data-concept=atelier] .hero-image{object-position:50% 70%}
+[data-concept=atelier] .brand-intro{padding-block:28px 0}
+[data-concept=atelier] .brand-intro h1{font-size:32px;line-height:1.4}
+[data-concept=atelier] .intro-break{display:none}
+[data-concept=atelier] .intro-support{margin-top:18px;display:flex}
+[data-concept=atelier] .intro-support .inline-link{margin-top:0}
+[data-concept=atelier] .services-section{padding-top:58px}
+[data-concept=atelier] .section-heading{margin-bottom:26px}
+[data-concept=atelier] .service-grid{gap:44px}
+[data-concept=atelier] .service-story{display:flex;flex-direction:column;gap:0;align-items:stretch}
+[data-concept=atelier] .service-story figure{order:0}
+[data-concept=atelier] .service-copy{order:1;margin-top:20px}
+[data-concept=atelier] .service-copy h3{font-size:24px}
+[data-concept=atelier] .service-copy p{margin-block:12px 14px}
+[data-concept=atelier] .work-layout{grid-template-columns:1fr}
+[data-concept=precision] .header-inner{height:78px}
+[data-concept=precision] .logo{font-size:18px;letter-spacing:.06em}
+[data-concept=precision] .hero{display:block;margin-top:16px}
+[data-concept=precision] .hero-media{height:auto;aspect-ratio:1}
+[data-concept=precision] .brand-intro{padding:24px 0 0;border:0;display:block}
+[data-concept=precision] .brand-intro h1{font-size:32px;max-width:none}
+[data-concept=precision] .intro-break{display:none}
+[data-concept=precision] .intro-support{display:flex;justify-content:space-between;margin-top:16px}
+[data-concept=precision] .intro-support .inline-link{margin-top:0}
+[data-concept=precision] .services-section{padding-top:54px}
+[data-concept=precision] .service-grid{gap:38px}
+[data-concept=precision] .work-intro{display:block}
+[data-concept=precision] .work-description{margin-top:14px}
+[data-concept=precision] .work-intro .inline-link{margin:15px 0 0}
+[data-concept=precision] .quote-section{gap:28px}
+[data-concept=gallery] .header-inner{height:110px;display:flex;flex-wrap:wrap;gap:0 18px;padding-block:18px 12px;justify-content:center}
+[data-concept=gallery] .header .logo{width:100%;text-align:center;font-size:23px;letter-spacing:.12em}
+[data-concept=gallery] .header-quote{margin-left:0;order:2;padding:6px 14px;min-height:36px}
+[data-concept=gallery] .menu-toggle{order:1;min-height:36px}
+[data-concept=gallery] .header nav{top:110px}
+[data-concept=gallery] .hero{margin-top:10px}
+[data-concept=gallery] .hero-media{height:auto;aspect-ratio:4/3}
+[data-concept=gallery] .brand-intro{padding-block:28px 0}
+[data-concept=gallery] .brand-intro h1{font-size:30px}
+[data-concept=gallery] .intro-support{gap:18px;margin-top:14px}
+[data-concept=gallery] .services-section{padding-top:58px}
+[data-concept=gallery] .service-grid{gap:44px}
+[data-concept=gallery] .exhaust-story,[data-concept=gallery] .wheel-story{padding-top:0}
+[data-concept=gallery] .service-image{aspect-ratio:1}
+[data-concept=gallery] .work-section{margin-top:64px}
+[data-concept=gallery] .quote-section{gap:28px}
+[data-concept=gallery] .quote-heading{display:block}
+[data-concept=gallery] .quote-heading>p{margin-top:16px}
+[data-concept=gallery] .quote-heading .local-note{margin-top:20px}
+}
+@media(max-width:370px){body{--gutter:20px}.logo{font-size:19px}.header-inner{gap:10px}.header-quote{gap:7px;padding-inline:9px}.brand-intro h1{font-size:28px}.intro-support{gap:8px}.intro-support p{font-size:14px}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
