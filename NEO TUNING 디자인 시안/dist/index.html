@@ -12,6 +12,8 @@
 <link rel="preload" href="assets/fonts/Cormorant-1.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/NotoSerifKR-1.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<script src="shop-config.js" defer></script>
+<script src="shop-template.js" defer></script>
 <script src="app.js" defer></script>
 </head>
 <body>
@@ -19,7 +21,7 @@
 <header class="header"><div class="header-inner wide">
 <a class="logo" href="#home" aria-label="NEO TUNING 홈">NEO TUNING</a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">메뉴 <span aria-hidden="true">+</span></button>
-<nav id="navigation" aria-label="주요 메뉴"><a href="#services">서비스</a><a href="#gallery">참고 갤러리</a><a class="header-quote" href="#quote">상담하기 <span aria-hidden="true">↗</span></a></nav></div>
+<nav id="navigation" aria-label="주요 메뉴"><a href="#shop" data-shop-nav hidden>매장 안내</a><a href="#services">서비스</a><a href="#gallery">참고 갤러리</a><a class="header-quote" href="#quote">상담하기 <span aria-hidden="true">↗</span></a></nav></div>
 </header>
 <main id="main">
 <section class="hero" id="home" aria-labelledby="hero-title">
@@ -60,9 +62,13 @@
         <figure class="work-photo"><button class="photo-open" type="button" data-photo="before" aria-label="시공 전 은색 포르쉐 사진 크게 보기"><img src="assets/wrap-before.jpg" alt="시공 전 은색 포르쉐, 작업장에서 촬영한 전면 사선 구도" width="480" height="640" loading="lazy"></button><figcaption><strong>시공 전 · 실버</strong><span aria-hidden="true">확대 ↗</span></figcaption></figure>
         <figure class="work-photo"><button class="photo-open" type="button" data-photo="after" aria-label="시공 후 빨간색 포르쉐 사진 크게 보기"><img src="assets/wrap-after.jpg" alt="시공 후 레드 컬러 포르쉐, 다른 각도에서 촬영한 전면 사선 구도" width="480" height="640" loading="lazy"></button><figcaption><strong>시공 후 · 레드</strong><span aria-hidden="true">확대 ↗</span></figcaption></figure>
       </div>
-      <div class="work-source"><p><strong>외부 시공 참고</strong> · <a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">Monarch Media Designs ↗</a></p><p>촬영 각도가 다른 비교 자료입니다. NEO TUNING의 시공 실적이나 고객 후기가 아닙니다.</p></div>
+      <div class="work-source"><p><strong>외부 시공 참고</strong> · <a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">Monarch Media Designs ↗</a></p><p>촬영 각도가 다른 비교 자료입니다. 해당 매장의 시공 실적이나 고객 후기가 아닙니다.</p></div>
     </div>
   </div>
+</section>
+<section class="shop-section wide" id="shop" aria-labelledby="shop-title" hidden>
+<div class="shop-intro"><p class="shop-eyebrow">ABOUT / VISIT</p><h2 id="shop-title">매장 안내</h2><p id="shop-description" hidden></p></div>
+<div class="shop-details"><dl id="shop-facts"></dl><div id="shop-channels" class="shop-channels"></div></div>
 </section>
 <section class="quote-section wide" id="quote" aria-labelledby="quote-title">
 <div class="quote-heading"><h2 id="quote-title">원하는 변화를<br>알려주세요.</h2><p>차종과 관심 있는 작업을 선택해<br>상담할 내용을 미리 정리해보세요.</p><p class="local-note">체험용 미리보기입니다.<br>입력한 내용은 저장하거나 전송하지 않습니다.</p></div>
@@ -74,7 +80,7 @@
 <button class="button primary submit-button" type="submit">상담 내용 미리보기 <span aria-hidden="true">↗</span></button><p class="form-note">실제 접수는 연결되지 않은 체험용 양식입니다.</p>
 </form></section>
 </main>
-<footer class="footer wide"><div class="footer-main"><a class="logo" href="#home">NEO TUNING</a><div class="footer-links"><a href="#services">서비스</a><a href="#gallery">참고 갤러리</a><a href="#quote">상담하기 ↗</a></div></div><div class="footer-meta"><span>2026 NEO TUNING · 콘셉트 포트폴리오</span><button id="credits-open" type="button">사진 출처</button><a href="#home">맨 위로 ↑</a></div></footer>
+<footer class="footer wide"><div class="footer-main"><a class="logo" href="#home">NEO TUNING</a><div class="footer-links"><a href="#shop" data-shop-nav hidden>매장 안내</a><a href="#services">서비스</a><a href="#gallery">참고 갤러리</a><a href="#quote">상담하기 ↗</a></div></div><div class="footer-meta"><span>2026 NEO TUNING · 콘셉트 포트폴리오</span><button id="credits-open" type="button">사진 출처</button><a href="#home">맨 위로 ↑</a></div></footer>
 <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="photo-title"><div class="photo-dialog-head"><h2 id="photo-title">포르쉐 컬러 랩핑 전후</h2><button type="button" class="close-button" data-close aria-label="사진 닫기">닫기 ×</button></div><div class="photo-switcher" role="group" aria-label="크게 볼 전후 사진 선택"><button type="button" data-photo-view="before" aria-pressed="true">시공 전 · 실버</button><button type="button" data-photo-view="after" aria-pressed="false">시공 후 · 레드</button></div><div class="photo-viewer"><img data-large-photo="before" src="assets/wrap-before.jpg" alt="확대: 시공 전 은색 포르쉐" width="480" height="640" loading="lazy"><img data-large-photo="after" src="assets/wrap-after.jpg" alt="확대: 시공 후 빨간색 포르쉐" width="480" height="640" loading="lazy" hidden></div><p class="photo-credit">외부 시공 참고 · <a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">Monarch Media Designs ↗</a></p></dialog>
 <dialog id="quote-dialog" class="modal" aria-labelledby="dialog-title"><button class="close-button" type="button" data-close aria-label="닫기">닫기 ×</button><h2 id="dialog-title">상담 내용 확인</h2><dl><dt>차량</dt><dd id="summary-car"></dd><dt>관심 작업</dt><dd id="summary-services"></dd><dt>원하는 스타일</dt><dd id="summary-message"></dd></dl><p class="dialog-note">미리보기입니다. 실제 상담은 접수되지 않으며 입력 내용은 전송되지 않습니다.</p><button class="button primary" type="button" data-close>확인했어요 ✓</button></dialog>
 <dialog id="credits-dialog" class="modal" aria-labelledby="credits-title"><button class="close-button" type="button" data-close aria-label="닫기">닫기 ×</button><h2 id="credits-title">사진 출처</h2><p>아래 사진은 콘셉트와 서비스를 설명하기 위한 참고 자료입니다.</p><ul>
@@ -83,6 +89,6 @@
 <li><a href="https://unsplash.com/photos/a-close-up-of-a-porsche-car-wheel-Q3qO1YR5_ts" target="_blank" rel="noopener noreferrer">휠 · Haberdoedas / Unsplash ↗</a></li>
 <li><a href="https://unsplash.com/photos/a-green-car-parked-on-the-side-of-the-road-6g_ebIKSbzU" target="_blank" rel="noopener noreferrer">랩핑 · Vignesh Rajendran / Unsplash ↗</a></li>
 <li><a href="https://monarchworld.com/color-change-wrap-gallery/" target="_blank" rel="noopener noreferrer">전후 사진 · Monarch Media Designs ↗</a></li>
-</ul><p class="dialog-note">외부 시공 사진을 NEO TUNING의 실적이나 고객 후기로 표시하지 않습니다.</p></dialog>
+</ul><p class="dialog-note">외부 시공 사진을 해당 매장의 실적이나 고객 후기로 표시하지 않습니다.</p></dialog>
 </body>
 </html>
